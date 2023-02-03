@@ -12,15 +12,16 @@
           <profile></profile>
         </div>
       </section>
-      <section class="relative left-80 top-80">helllo</section>
+      <section class="relative left-80 top-80">helllojjjr</section>
     </div>
-
+hekasfa
     <div>
       <section>
         <div class="pl-28 pt-4 m-20 w-fit h-full">
-          <conten></conten>
+          <router-view></router-view>
         </div>
       </section>
+      
     </div>
   </section>
 
@@ -30,6 +31,7 @@
 import iconNavbar from "./components/iconNavbar.vue";
 import profile from "./components/profile.vue";
 import conten from "./components/conten.vue";
+
 </script>
 
 <style scoped></style>

@@ -11,12 +11,13 @@
           <img class="w-10 p-2" src="../assets/icon/dashboard.png" />
           Dashboard
         </li>
+        <router-link to="/course">
         <li
           class="w-40 items-center flex cursor-pointer hover:bg-violet-600 hover:text-white rounded-md"
         >
           <img class="w-10 p-2" src="../assets/icon/online-course.png" />
           Course
-        </li>
+        </li></router-link>
         <li
           class="w-40 items-center flex cursor-pointer hover:bg-violet-600 hover:text-white rounded-md"
         >

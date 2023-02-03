@@ -38,14 +38,14 @@
 
     <section>
       <div
-        class="justify-between w-64 bg-white rounded-full shadow-lg space-y-2 flex p-2 text-sm text-gray-500 font-semibold hover:bg-violet-200"
+        class="justify-between w-64 bg-white rounded-full shadow-lg space-y-2 flex p-2 text-sm text-gray-500 font-semibold hover:bg-violet-500 hover:text-white"
       >
         <img
-          class="h-12 rounded-full cursor-pointer"
+          class="h-10 rounded-full cursor-pointer"
           src="../assets/img/Screenshot 2023-01-25 135650.png"
           alt="Profil"
         />
-        <p class="p-1">#IncludePro</p>
+        <p class="p-0">#IncludePro</p>
         <ul
           class="bg-gray-300 rounded-full w-8 h-8 cursor-pointer hover:bg-violet-300"
         >
@@ -53,7 +53,7 @@
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            class="w-8 h-8 hover:brightness-200"
+            class="w-6 h-6 m-1 hover:brightness-200"
           >
             <path
               fill-rule="evenodd"
