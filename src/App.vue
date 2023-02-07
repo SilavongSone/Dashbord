@@ -1,37 +1,30 @@
 <template>
-  <section class="inline-block bg-fuchsia-100 h-screen w-screen">
-    <div class="h-screen w-full flex fixed top-0">
-      <section class="h-full w-48">
-        <div class="h-full">
-          <iconNavbar> </iconNavbar>
-        </div>
-      </section>
-
-      <section class="h-full w-screen left-44">
+  <div class="h-screen w-full flex">
+    <!-- Navbar -->
+    <section class="h-full w-52 bg-slate-200">
+      <div>
+        <iconNavbar> </iconNavbar>
+      </div>
+    </section>
+    <!-- View -->
+    <section class="h-full w-full bg-gray-50">
+      <!-- App bar -->
+      <nav class="h-20 w-full bg-white">
         <div>
-          <profile></profile>
+          <headBar></headBar>
         </div>
-      </section>
-      <section class="relative left-80 top-80">helllojjjr</section>
-    </div>
-hekasfa
-    <div>
-      <section>
-        <div class="pl-28 pt-4 m-20 w-fit h-full">
-          <router-view></router-view>
-        </div>
-      </section>
-      
-    </div>
-  </section>
-
+      </nav>
+      <!-- Router view -->
+      <div>
+        <router-view></router-view>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script setup>
 import iconNavbar from "./components/iconNavbar.vue";
-import profile from "./components/profile.vue";
-import conten from "./components/conten.vue";
-
+import headBar from "./components/headBar.vue";
 </script>
 
 <style scoped></style>

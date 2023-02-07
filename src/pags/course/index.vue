@@ -1,13 +1,7 @@
 <template>
-    <div>
-how
-    </div>
+  <div>Wellcom to my Course</div>
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
