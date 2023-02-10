@@ -1,7 +1,42 @@
 <template>
-  <div class="bg-white w-full h-20 flex items-center justify-between p-6 drop-shadow-md">
+  <div
+    class="bg-white w-full h-20 flex items-center justify-between p-6 drop-shadow-md"
+  >
     <section>
-      <div class="text-black font-semibold">Hello Pro!</div>
+      <div>
+        <button @click="nameAlt">
+          <h1>Hello #{{ fullName() }}</h1>
+
+          <!-- Event Input (show) -->
+          <!-- <h1>NickName :{{ Nname }}</h1> -->
+        </button>
+
+        <!-- Event Input (write) -->
+        <!-- <h2>Push Your NickName :<input type="text" v-on:input="NnamePut"></h2> -->
+
+        <!-- evenClick -->
+        <!-- <h3>{{ this.age }}</h3> -->
+
+        <!-- Event argument -->
+        <!-- <button @click="increment(10)">LeftClick add 
+
+          <p @click.right="decrement(15)">RightClick down</p>
+        </button> -->
+
+        <!-- <button @click="decrement()"><p>dell</p></button> -->
+
+        <!-- object -->
+        <!-- <ul>
+          <p>Status</p>
+          <li>ເພດ :{{ status.gender }}</li>
+          <li>ນໍ້າໜັກ :{{ status.weight }}</li>
+          <li>ລວງສູງ :{{ status.hight }}</li>
+          <li>ສຸຂະພາບ :{{ status.healty }}</li>
+        </ul> -->
+
+        <!-- Array -->
+        <!-- <h2>{{ hobby[] }}</h2> -->
+      </div>
     </section>
 
     <section class="drop-shadow-2xl bg-gray-200 w-52 h-10 rounded-full">
@@ -40,7 +75,7 @@
       <div>
         <ul>
           <li
-            class="justify-between w-full bg-white rounded-full drop-shadow-2xl  flex p-2 text-sm text-gray-500 font-semibold hover:bg-violet-500 hover:text-white"
+            class="justify-between w-full bg-white rounded-full drop-shadow-2xl flex p-2 text-sm text-gray-500 font-semibold hover:bg-violet-500 hover:text-white"
           >
             <img
               class="h-10 w-10 rounded-full cursor-pointer hover:brightness-75"
@@ -48,9 +83,16 @@
               alt="Profil"
             />
 
-            <div>
-              #IncludePro
-              <p class="text-xs">Proinclude@gmail.com</p>
+            <div class="pl-2">
+              <ul>
+                {{
+                  fName
+                }}
+                {{
+                  lName
+                }}
+              </ul>
+              <p class="text-xs">{{ gMail }}</p>
             </div>
 
             <ul
@@ -66,7 +108,11 @@
             <ul
               class="bg-gray-300 rounded-full cursor-pointer hover:bg-white h-8 w-8"
             >
-              <img class="w-6 h-6 m-1" src="../assets/icon/settings.png" alt="" />
+              <img
+                class="w-6 h-6 m-1"
+                src="../assets/icon/settings.png"
+                alt=""
+              />
             </ul>
           </li>
         </ul>
@@ -75,4 +121,47 @@
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  name: "App",
+  data() {
+    return {
+      fName: "Pro",
+      lName: "Include",
+      Nname: "",
+      age: 20,
+      gMail: "ProInclude@gmail.com",
+
+      // Array
+      hobby: ["Playingame", "listenMusic"],
+
+      // Object
+      status: { gender: "ຊາຍ", weight: 70, hight: 180, healty: false },
+    };
+  },
+  methods: {
+    fullName() {
+      return this.fName + this.lName;
+    },
+
+    nameAlt() {
+      alert(this.fName + this.lName);
+    },
+
+    // Event argument
+    increment(value) {
+      this.age += value;
+    },
+
+    //Event Click
+    decrement(value) {
+      this.age -= value;
+    },
+
+    //Event Input
+    NnamePut(event) {
+      this.Nname=event.target.value
+    }
+  },
+};
+</script>

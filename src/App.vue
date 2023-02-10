@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen w-full flex">
+  <div class="h-screen w-full flex relative">
     <!-- Navbar -->
     <section class="h-full w-52 bg-slate-200">
       <div>
@@ -7,7 +7,7 @@
       </div>
     </section>
     <!-- View -->
-    <section class="h-full w-full bg-gray-50">
+    <section class="h-full w-full bg-gray-50 flex flex-col">
       <!-- App bar -->
       <nav class="h-20 w-full bg-white">
         <div>
@@ -15,7 +15,7 @@
         </div>
       </nav>
       <!-- Router view -->
-      <div>
+      <div class="h-full overflow-auto">
         <router-view></router-view>
       </div>
     </section>
