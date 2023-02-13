@@ -2,7 +2,9 @@
   <div>
     <section class="bg-white w-full h-screen text-xs drop-shadow-2xl">
       <div class="flex items-center justify-center">
-        <img class="p-2 w-20" src="../assets/logo/logo.png" alt="logo" />
+        <router-link to="/"
+          ><img class="p-2 w-20" src="../assets/logo/logo.png" alt="logo"
+        /></router-link>
       </div>
       <ul class="w-36 text-gray-500 p-2">
         <div v-for="(item, index) in navBarItem" :key="index">
@@ -72,8 +74,6 @@ const navBarItem = [
     icon: FriendsIcon,
   },
 ];
-
-
 </script>
 
 <style scoped>
