@@ -11,7 +11,7 @@
           >
             <router-link :to="item.path">
               <li
-                class="hover:brightness-125 md:w-14 md:h-32 2xl:w-36 xl:w-28 xl:h-28 lg:w-20 flex items-center justify-center rounded-lg mr-6 hover:font-medium sm:w-12"
+                class="hover:brightness-125 md:w-14 md:h-32 2xl:w-36 xl:w-28 xl:h-28 lg:w-20 flex items-center justify-center rounded-lg mr-6 hover:font-bold sm:w-12"
                 :class="[item.color]"
               >
                 <div class="flex flex-col justify-center items-center text-sm">
@@ -44,7 +44,7 @@
             <div
               class="rounded-lg bg-white xl:h-52 xl:w-52 xl:block md:w-0 hidden hover:brightness-90 drop-shadow-lg ml-10"
             >
-              <p class="font-medium absolute xl:block hidden">course</p>
+              <p class="font-medium absolute xl:block hidden p-2">course</p>
               <li
                 class="xl:h-52 xl:w-full lg:h-52 lg:w-full xl:block hidden mt-7 md:w-0 md:h-0"
                 id="chartPie"
@@ -55,7 +55,9 @@
 
         <!-- TableDatabase -->
         <section>
-          <div class="bg-white drop-shadow-xl ml-4 p-2 md:w-80 lg:w-full">
+          <div
+            class="bg-white drop-shadow-xl ml-4 mr-4 p-2 md:w-80 lg:w-auto rounded-lg"
+          >
             <ul class="flex justify-between">
               <li class="font-semibold">Database</li>
               <li>
@@ -67,19 +69,27 @@
 
             <table class="table-auto mt-1">
               <thead>
-                <tr class="border-b-2 sm:text-sm lg:text-sm">
+                <tr class="border-b-2 sm:text-sm lg:text-sm 2xl:text-base">
                   <th></th>
                   <th>Students Name</th>
-                  <th class="xl:pl-7 2xl:pl-10 lg:pl-2 lg:text-sm md:pl-1">
+                  <th
+                    class="xl:pl-7 2xl:pl-10 lg:pl-2 lg:text-sm md:pl-1 2xl:text-base"
+                  >
                     Score
                   </th>
-                  <th class="xl:pl-7 2xl:pl-10 lg:pl-2 lg:text-sm md:pl-1">
+                  <th
+                    class="xl:pl-7 2xl:pl-10 lg:pl-2 lg:text-sm md:pl-1 2xl:text-base"
+                  >
                     Summitted
                   </th>
-                  <th class="xl:pl-7 2xl:pl-10 lg:pl-2 lg:text-sm md:pl-1">
+                  <th
+                    class="xl:pl-7 2xl:pl-10 lg:pl-2 lg:text-sm md:pl-1 2xl:text-base"
+                  >
                     Grad
                   </th>
-                  <th class="xl:pl-7 2xl:pl-10 lg:pl-2 lg:text-sm md:pl-1">
+                  <th
+                    class="xl:pl-7 2xl:pl-10 lg:pl-2 lg:text-sm md:pl-1 2xl:text-base"
+                  >
                     Pass/Fail
                   </th>
                 </tr>
@@ -90,7 +100,9 @@
                   :key="index"
                   class="border-b-2 text-sm"
                 >
-                  <td><img class="w-10 rounded-full" :src="item.icon" /></td>
+                  <td>
+                    <img class="w-10 rounded-full p-1" :src="item.icon" />
+                  </td>
                   <td class="text-xs">{{ item.fname }} {{ item.lname }}</td>
                   <td class="xl:pl-7 2xl:pl-10 lg:pl-2 text-xs md:pl-1">
                     {{ item.Score }}
@@ -112,159 +124,238 @@
       </div>
 
       <!-- Calendar -->
-      <div class="ml-10 relative w-full">
-        <ul>
-          <li
-            class="bg-white h-full rounded-lg drop-shadow-lg mt-3 pb-2 w-full"
+      <body class="ml-5 p-2 flex flex-col">
+        <div class="container mx-auto mt-3">
+          <div
+            class="wrapper bg-white rounded-lg shadow w-full p-2 drop-shadow-lg"
           >
-            <main>
-              <div class="calendar pl-4 pt-1 ">
-                <div class="month-indicator justify-center flex">
-                  <ul>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      class="w-10 bg-fuchsia-500 rounded-full text-white cursor-pointer hover:bg-white hover:text-fuchsia-500"
+            <div class="header flex justify-between border-b">
+              <span class="text-lg font-bold"> 2020 July </span>
+              <div class="buttons">
+                <button class="p-1 m-2">
+                  <svg
+                    width="20px"
+                    fill="gray"
+                    height="15px"
+                    viewBox="0 0 16 16"
+                    class="bi bi-arrow-left-circle"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M8.354 11.354a.5.5 0 0 0 0-.708L5.707 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M11.5 8a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5z"
+                    />
+                  </svg>
+                </button>
+                <button class="p-1">
+                  <svg
+                    width="20px"
+                    fill="gray"
+                    height="15px"
+                    viewBox="0 0 16 16"
+                    class="bi bi-arrow-right-circle"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M7.646 11.354a.5.5 0 0 1 0-.708L10.293 8 7.646 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M4.5 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <table class="w-full">
+              <thead>
+                <tr>
+                  <th class="p-2 border-r xl:text-sm text-xs w-28">
+                    <span class="xl:block lg:block md:block sm:block hidden"
+                      >Mon</span
                     >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  </ul>
-                  <time datetime="2019-02" class="ml-10 mr-10 rounded-full"> February 2023 </time>
-                  <ul>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="w-10 bg-fuchsia-500 rounded-full text-white cursor-pointer hover:bg-white hover:text-fuchsia-500"
+                  </th>
+                  <th class="p-2 border-r xl:text-sm text-xs w-28">
+                    <span class="xl:block lg:block md:block sm:block hidden"
+                      >Tue</span
                     >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  </ul>
+                  </th>
+                  <th class="p-2 border-r xl:text-sm text-xs w-28">
+                    <span class="xl:block lg:block md:block sm:block hidden"
+                      >Wed</span
+                    >
+                  </th>
+                  <th class="p-2 border-r xl:text-sm text-xs w-28">
+                    <span class="xl:block lg:block md:block sm:block hidden"
+                      >Thu</span
+                    >
+                  </th>
+                  <th class="p-2 border-r xl:text-sm text-xs w-28">
+                    <span class="xl:block lg:block md:block sm:block hidden"
+                      >Fri</span
+                    >
+                  </th>
+                  <th class="p-2 border-r xl:text-sm text-xs w-28">
+                    <span class="xl:block lg:block md:block sm:block hidden"
+                      >Sat</span
+                    >
+                  </th>
+                  <th class="p-2 border-r xl:text-sm text-xs w-28 bg-red-500">
+                    <span class="xl:block lg:block md:block sm:block hidden"
+                      >Sun</span
+                    >
+                  </th>
+                </tr>
+              </thead>
+
+              <!-- edit -->
+              <tbody>
+                <tr class="text-center">
+                  <td
+                    class="text-gray-500 border-b-2"
+                    v-for="(item, index) in calendar"
+                    :key="index"
+                  >
+                    <div class="flex flex-col">
+                      <div
+                        class="rounded-full p-2 py-4 w-20 hover:text-white hover:bg-fuchsia-400"
+                      >
+                        <span>{{ item.numCol1 }}</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="text-center">
+                  <td
+                    class="text-gray-500 border-b-2"
+                    v-for="(item, index) in calendar"
+                    :key="index"
+                  >
+                    <div class="flex flex-col">
+                      <div
+                        class="rounded-full p-2 py-4 w-20 hover:text-white hover:bg-fuchsia-400"
+                      >
+                        <span>{{ item.numCol2 }}</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="text-center">
+                  <td
+                    class="text-gray-500 border-b-2"
+                    v-for="(item, index) in calendar"
+                    :key="index"
+                  >
+                    <div class="flex flex-col">
+                      <div
+                        class="rounded-full p-2 py-4 w-20 hover:text-white hover:bg-fuchsia-400"
+                      >
+                        <span>{{ item.numCol3 }}</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="text-center">
+                  <td
+                    class="text-gray-500 border-b-2"
+                    v-for="(item, index) in calendar"
+                    :key="index"
+                  >
+                    <div class="flex flex-col">
+                      <div
+                        class="rounded-full p-2 py-4 w-20 hover:text-white hover:bg-fuchsia-400"
+                      >
+                        <span>{{ item.numCol4 }}</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="text-center">
+                  <td
+                    class="text-gray-500"
+                    v-for="(item, index) in calendar"
+                    :key="index"
+                  >
+                    <div class="flex flex-col">
+                      <div
+                        class="rounded-full p-2 py-4 w-20 hover:text-white hover:bg-fuchsia-400"
+                        :class="[item.color]"
+                      >
+                        <span>{{ item.numCol5 }}</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <ul class="bg-white drop-shadow-lg mt-2 rounded-md h-full">
+            <li class="pl-2 pt-1 font-bold">Notice Board</li>
+
+            <li>
+              <div
+                class="p-2 max-w-xl ml-4 bg-white rounded-xl shadow-xl flex items-center space-x-4"
+              >
+                <div class="shrink-0">
+                  <img
+                    class="h-14 w-14 rounded-xl"
+                    src="../../assets/img/green1 (1).jpg"
+                    alt="ChitChat Logo"
+                  />
                 </div>
-                <div class="day-of-week">
-                  <div>Su</div>
-                  <div>Mo</div>
-                  <div>Tu</div>
-                  <div>We</div>
-                  <div>Th</div>
-                  <div>Fr</div>
-                  <div>Sa</div>
-                </div>
-                <div class="date-grid">
-                  <li>
-                    <time datetime="2019-02-01"></time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-01"></time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-01">1</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-02">2</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-03">3</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-04">4</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-05">5</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-06">6</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-07">7</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-08">8</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-09">9</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-10">10</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-11">11</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-12">12</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-13">13</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-14">14</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-15">15</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-16">16</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-17">17</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-18">18</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-19">19</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-20">20</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-21">21</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-22">22</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-23">23</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-24">24</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-25">25</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-26">26</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-27">27</time>
-                  </li>
-                  <li>
-                    <time datetime="2019-02-28">28</time>
-                  </li>
+                <div>
+                  <div class="text-base font-medium text-black">
+                    Time Extension Notice of Semester Admission
+                  </div>
+                  <p class="text-slate-500 text-sm">By - Justin bever</p>
                 </div>
               </div>
-            </main>
-          </li>
-        </ul>
-      </div>
+            </li>
+            <li>
+              <div
+                class="p-2 max-w-xl ml-4 bg-white rounded-xl shadow-xl flex items-center space-x-4 mt-2 mb-2"
+              >
+                <div class="shrink-0">
+                  <img
+                    class="h-14 w-14 rounded-xl"
+                    src="../../assets/img/green1 (1).jpg"
+                    alt="ChitChat Logo"
+                  />
+                </div>
+                <div>
+                  <div class="text-base font-medium text-black">
+                    Notice of special Examinatios of Semester Spring 2021
+                  </div>
+                  <p class="text-slate-500 text-sm">By - My Friend You</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </body>
     </head>
   </div>
 </template>
 
 <script setup>
-//std
+//std img
 import Anousone from "../../assets/img/Anousone.jpg";
 import Owen from "../../assets/img/IMG_2586.jpg";
 import Noel from "../../assets/img/nut.png";
@@ -277,6 +368,7 @@ import averageCourese from "../../assets/icon/course-assign.png";
 import averageRoom from "../../assets/icon/room (1).png";
 import * as echarts from "echarts";
 import { onMounted } from "@vue/runtime-core";
+
 onMounted(() => {
   var myChart = echarts.init(document.getElementById("chartPie"));
   myChart.setOption({
@@ -370,6 +462,7 @@ onMounted(() => {
   });
 });
 
+//total averg
 const average = [
   {
     label: "Total Students",
@@ -400,6 +493,8 @@ const average = [
     color: "bg-orange-200",
   },
 ];
+
+//student
 const Students = [
   {
     icon: Anousone,
@@ -440,6 +535,64 @@ const Students = [
 ];
 
 //calendar
+const calendar = [
+  {
+    numCol1: 1,
+    numCol2: 8,
+    numCol3: 15,
+    numCol4: 22,
+    numCol5: 29,
+  },
+  {
+    numCol1: 2,
+    numCol2: 9,
+    numCol3: 16,
+    numCol4: 23,
+    numCol5: 30,
+  },
+  {
+    numCol1: 3,
+    numCol2: 10,
+    numCol3: 17,
+    numCol4: 24,
+    numCol5: 1,
+    color: ["text-gray-300"],
+  },
+  {
+    numCol1: 4,
+    numCol2: 11,
+    numCol3: 18,
+    numCol4: 25,
+    numCol5: 2,
+    color: ["text-gray-300"],
+  },
+  {
+    numCol1: 5,
+    numCol2: 12,
+    numCol3: 19,
+    numCol4: 26,
+    numCol5: 3,
+    color: ["text-gray-300"],
+  },
+  {
+    numCol1: 6,
+    numCol2: 13,
+    numCol3: 20,
+    numCol4: 27,
+    numCol5: 4,
+    color: ["text-gray-300"],
+  },
+  {
+    numCol1: 7,
+    numCol2: 14,
+    numCol3: 21,
+    numCol4: 28,
+    numCol5: 5,
+    color: ["text-gray-300"],
+  },
+];
+
+//hooper
 </script>
 
 <style scoped>

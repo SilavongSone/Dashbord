@@ -160,8 +160,11 @@ export default {
 
     //Event Input
     NnamePut(event) {
-      this.Nname=event.target.value
-    }
+      this.Nname = event.target.value;
+    },
   },
 };
+
+
+  
 </script>
