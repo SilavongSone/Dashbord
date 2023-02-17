@@ -39,7 +39,7 @@
       </div>
     </section>
 
-    <section class="drop-shadow-2xl bg-gray-200 w-52 h-10 rounded-full">
+    <section class="drop-shadow-md bg-gray-200 w-52 h-10 rounded-full">
       <label
         for="default-search"
         class="text-sm font-medium sr-only dark:text-white"
@@ -75,7 +75,7 @@
       <div>
         <ul>
           <li
-            class="justify-between w-full bg-white rounded-full drop-shadow-2xl flex p-2 text-sm text-gray-500 font-semibold hover:bg-violet-500 hover:text-white"
+            class="justify-between w-full bg-white rounded-full drop-shadow-md flex p-2 text-sm text-gray-500 font-semibold hover:brightness-95 hover:text-black "
           >
             <img
               class="h-10 w-10 rounded-full cursor-pointer hover:brightness-75"
@@ -96,7 +96,7 @@
             </div>
 
             <ul
-              class="bg-gray-300 rounded-full cursor-pointer hover:bg-white h-8 w-8"
+              class="bg-gray-200 rounded-full cursor-pointer hover:bg-gray-300 h-8 w-8"
             >
               <img
                 class="w-6 h-6 m-1"
@@ -106,7 +106,7 @@
             </ul>
 
             <ul
-              class="bg-gray-300 rounded-full cursor-pointer hover:bg-white h-8 w-8"
+              class="bg-gray-200 rounded-full cursor-pointer hover:bg-gray-300 h-8 w-8"
             >
               <img
                 class="w-6 h-6 m-1"
@@ -164,7 +164,4 @@ export default {
     },
   },
 };
-
-
-  
 </script>

@@ -45,7 +45,7 @@ const navBarItem = [
   },
   {
     label: "Students",
-    path: "/course",
+    path: "/students",
     icon: Students,
   },
   {
@@ -55,7 +55,7 @@ const navBarItem = [
   },
   {
     label: "TimeTable",
-    path: "/course",
+    path: "/timeTable",
     icon: TimeTableIcon,
   },
   {
@@ -119,4 +119,5 @@ const navBarItem = [
   width: 100%;
   filter: drop-shadow(0 0 23px var(--animation-color));
 }
+
 </style>

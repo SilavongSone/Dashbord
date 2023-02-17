@@ -11,7 +11,7 @@
           >
             <router-link :to="item.path">
               <li
-                class="hover:brightness-125 md:w-14 md:h-32 2xl:w-36 xl:w-28 xl:h-28 lg:w-20 flex items-center justify-center rounded-lg mr-6 hover:font-bold sm:w-12"
+                class="hover:brightness-95 md:w-14 md:h-32 2xl:w-36 xl:w-28 xl:h-28 lg:w-20 flex items-center justify-center rounded-lg mr-6 sm:w-12"
                 :class="[item.color]"
               >
                 <div class="flex flex-col justify-center items-center text-sm">
@@ -28,7 +28,7 @@
         <section>
           <ul class="m-3 p-1 flex">
             <div
-              class="rounded-lg bg-white h-52 hover:brightness-90 drop-shadow-lg"
+              class="rounded-lg bg-white h-52 hover:brightness-95 drop-shadow-lg"
             >
               <p
                 class="font-medium absolute top-2 left-2 md:text-base hidden md:block"
@@ -56,7 +56,7 @@
         <!-- TableDatabase -->
         <section>
           <div
-            class="bg-white drop-shadow-xl ml-4 mr-4 p-2 md:w-80 lg:w-auto rounded-lg"
+            class="bg-white drop-shadow-xl ml-4 mr-4 p-2 md:w-80 lg:w-auto rounded-lg overflow-hidden"
           >
             <ul class="flex justify-between">
               <li class="font-semibold">Database</li>
@@ -98,7 +98,7 @@
                 <tr
                   v-for="(item, index) in Students"
                   :key="index"
-                  class="border-b-2 text-sm"
+                  class="border-b-2 text-sm hover:brightness-95 bg-white"
                 >
                   <td>
                     <img class="w-10 rounded-full p-1" :src="item.icon" />
@@ -124,230 +124,125 @@
       </div>
 
       <!-- Calendar -->
-      <body class="ml-5 p-2 flex flex-col">
-        <div class="container mx-auto mt-3">
-          <div
-            class="wrapper bg-white rounded-lg shadow w-full p-2 drop-shadow-lg"
-          >
-            <div class="header flex justify-between border-b">
-              <span class="text-lg font-bold"> 2020 July </span>
-              <div class="buttons">
-                <button class="p-1 m-2">
-                  <svg
-                    width="20px"
-                    fill="gray"
-                    height="15px"
-                    viewBox="0 0 16 16"
-                    class="bi bi-arrow-left-circle"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      d="M8.354 11.354a.5.5 0 0 0 0-.708L5.707 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      d="M11.5 8a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5z"
-                    />
-                  </svg>
-                </button>
-                <button class="p-1">
-                  <svg
-                    width="20px"
-                    fill="gray"
-                    height="15px"
-                    viewBox="0 0 16 16"
-                    class="bi bi-arrow-right-circle"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      d="M7.646 11.354a.5.5 0 0 1 0-.708L10.293 8 7.646 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0z"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      d="M4.5 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"
-                    />
-                  </svg>
-                </button>
-              </div>
+      <body class="ml-5 p-2 relative overflow-hidden">
+        <div class="wrapper mt-3 ml-10">
+          <header class="">
+            <p class="current-date">February 2022</p>
+            <div class="icons">
+              <span id="prev" class="material-symbols-rounded"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-10 h-10"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </span>
+              <span id="next" class="material-symbols-rounded"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-10 h-10"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </span>
             </div>
-
-            <table class="w-full">
-              <thead>
-                <tr>
-                  <th class="p-2 border-r xl:text-sm text-xs w-28">
-                    <span class="xl:block lg:block md:block sm:block hidden"
-                      >Mon</span
-                    >
-                  </th>
-                  <th class="p-2 border-r xl:text-sm text-xs w-28">
-                    <span class="xl:block lg:block md:block sm:block hidden"
-                      >Tue</span
-                    >
-                  </th>
-                  <th class="p-2 border-r xl:text-sm text-xs w-28">
-                    <span class="xl:block lg:block md:block sm:block hidden"
-                      >Wed</span
-                    >
-                  </th>
-                  <th class="p-2 border-r xl:text-sm text-xs w-28">
-                    <span class="xl:block lg:block md:block sm:block hidden"
-                      >Thu</span
-                    >
-                  </th>
-                  <th class="p-2 border-r xl:text-sm text-xs w-28">
-                    <span class="xl:block lg:block md:block sm:block hidden"
-                      >Fri</span
-                    >
-                  </th>
-                  <th class="p-2 border-r xl:text-sm text-xs w-28">
-                    <span class="xl:block lg:block md:block sm:block hidden"
-                      >Sat</span
-                    >
-                  </th>
-                  <th class="p-2 border-r xl:text-sm text-xs w-28 bg-red-500">
-                    <span class="xl:block lg:block md:block sm:block hidden"
-                      >Sun</span
-                    >
-                  </th>
-                </tr>
-              </thead>
-
-              <!-- edit -->
-              <tbody>
-                <tr class="text-center">
-                  <td
-                    class="text-gray-500 border-b-2"
-                    v-for="(item, index) in calendar"
-                    :key="index"
-                  >
-                    <div class="flex flex-col">
-                      <div
-                        class="rounded-full p-2 py-4 w-20 hover:text-white hover:bg-fuchsia-400"
-                      >
-                        <span>{{ item.numCol1 }}</span>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="text-center">
-                  <td
-                    class="text-gray-500 border-b-2"
-                    v-for="(item, index) in calendar"
-                    :key="index"
-                  >
-                    <div class="flex flex-col">
-                      <div
-                        class="rounded-full p-2 py-4 w-20 hover:text-white hover:bg-fuchsia-400"
-                      >
-                        <span>{{ item.numCol2 }}</span>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="text-center">
-                  <td
-                    class="text-gray-500 border-b-2"
-                    v-for="(item, index) in calendar"
-                    :key="index"
-                  >
-                    <div class="flex flex-col">
-                      <div
-                        class="rounded-full p-2 py-4 w-20 hover:text-white hover:bg-fuchsia-400"
-                      >
-                        <span>{{ item.numCol3 }}</span>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="text-center">
-                  <td
-                    class="text-gray-500 border-b-2"
-                    v-for="(item, index) in calendar"
-                    :key="index"
-                  >
-                    <div class="flex flex-col">
-                      <div
-                        class="rounded-full p-2 py-4 w-20 hover:text-white hover:bg-fuchsia-400"
-                      >
-                        <span>{{ item.numCol4 }}</span>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="text-center">
-                  <td
-                    class="text-gray-500"
-                    v-for="(item, index) in calendar"
-                    :key="index"
-                  >
-                    <div class="flex flex-col">
-                      <div
-                        class="rounded-full p-2 py-4 w-20 hover:text-white hover:bg-fuchsia-400"
-                        :class="[item.color]"
-                      >
-                        <span>{{ item.numCol5 }}</span>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          </header>
+          <div class="calendar">
+            <ul class="weeks">
+              <li class="px-4">Sun</li>
+              <li class="px-4">Mon</li>
+              <li class="px-4">Tue</li>
+              <li class="px-4">Wed</li>
+              <li class="px-4">Thu</li>
+              <li class="px-4">Fri</li>
+              <li class="px-4">Sat</li>
+            </ul>
+            <ul class="day text-xs">
+              <li class="inactive">29</li>
+              <li class="inactive">30</li>
+              <li class="inactive">31</li>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+              <li>8</li>
+              <li>9</li>
+              <li>10</li>
+              <li>11</li>
+              <li>12</li>
+              <li>13</li>
+              <li>14</li>
+              <li class="active">15</li>
+              <li>16</li>
+              <li>17</li>
+              <li>18</li>
+              <li>19</li>
+              <li>20</li>
+              <li>21</li>
+              <li>22</li>
+              <li>23</li>
+              <li>24</li>
+              <li>25</li>
+              <li>26</li>
+              <li>27</li>
+              <li>28</li>
+              <li class="inactive">1</li>
+              <li class="inactive">2</li>
+              <li class="inactive">3</li>
+              <li class="inactive">4</li>
+              <li class="inactive">5</li>
+              <li class="inactive">6</li>
+              <li class="inactive">7</li>
+              <li class="inactive">8</li>
+              <li class="inactive">9</li>
+              <li class="inactive">10</li>
+              <li class="inactive">11</li>
+            </ul>
           </div>
-        </div>
+          <div>
+            <ul class="bg-white drop-shadow-lg mt-4 rounded-md h-28 w-full">
+              <li class="pl-2 pt- font-bold">Notice Board</li>
 
-        <div>
-          <ul class="bg-white drop-shadow-lg mt-2 rounded-md h-full">
-            <li class="pl-2 pt-1 font-bold">Notice Board</li>
-
-            <li>
-              <div
-                class="p-2 max-w-xl ml-4 bg-white rounded-xl shadow-xl flex items-center space-x-4"
-              >
-                <div class="shrink-0">
-                  <img
-                    class="h-14 w-14 rounded-xl"
-                    src="../../assets/img/green1 (1).jpg"
-                    alt="ChitChat Logo"
-                  />
-                </div>
-                <div>
-                  <div class="text-base font-medium text-black">
-                    Time Extension Notice of Semester Admission
+              <li>
+                <div
+                  class="p-2 max-w-xl ml-4 bg-white rounded-xl shadow-xl flex items-center space-x-4 hover:brightness-95"
+                >
+                  <div class="shrink-0">
+                    <img
+                      class="h-14 w-14 rounded-xl"
+                      src="../../assets/img/green1 (1).jpg"
+                      alt="ChitChat Logo"
+                    />
                   </div>
-                  <p class="text-slate-500 text-sm">By - Justin bever</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div
-                class="p-2 max-w-xl ml-4 bg-white rounded-xl shadow-xl flex items-center space-x-4 mt-2 mb-2"
-              >
-                <div class="shrink-0">
-                  <img
-                    class="h-14 w-14 rounded-xl"
-                    src="../../assets/img/green1 (1).jpg"
-                    alt="ChitChat Logo"
-                  />
-                </div>
-                <div>
-                  <div class="text-base font-medium text-black">
-                    Notice of special Examinatios of Semester Spring 2021
+                  <div>
+                    <div class="text-base font-medium text-black">
+                      Time Extension Notice of Semester Admission
+                    </div>
+                    <p class="text-slate-500 text-sm">By - Justin bever</p>
                   </div>
-                  <p class="text-slate-500 text-sm">By - My Friend You</p>
                 </div>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
         </div>
       </body>
     </head>
@@ -367,7 +262,9 @@ import averageTeacher from "../../assets/icon/school-director.png";
 import averageCourese from "../../assets/icon/course-assign.png";
 import averageRoom from "../../assets/icon/room (1).png";
 import * as echarts from "echarts";
+
 import { onMounted } from "@vue/runtime-core";
+import { render } from "@vue/runtime-dom";
 
 onMounted(() => {
   var myChart = echarts.init(document.getElementById("chartPie"));
@@ -404,12 +301,11 @@ onMounted(() => {
           { value: 75, name: "In Prosess" },
           { value: 25, name: "Prosess" },
         ],
-        color: ["#0047FF", "#E9E7F8"],
+        color: ["#0047FF", "#D9D9D9"],
       },
     ],
   });
-});
-onMounted(() => {
+
   var myChart = echarts.init(document.getElementById("chartBar"));
   myChart.setOption({
     tooltip: {
@@ -459,6 +355,87 @@ onMounted(() => {
         ],
       },
     ],
+  });
+});
+
+onMounted(() => {
+  // renderCalendar();
+  //calendar dynamic
+  const daysTag = document.querySelector(".days"),
+    currentDate = document.querySelector(".current-date"),
+    prevNextIcon = document.querySelectorAll(".icons span");
+
+  // getting new date, current year and month
+  let date = new Date(),
+    currYear = date.getFullYear(),
+    currMonth = date.getMonth();
+
+  // storing full name of all months in array
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const renderCalendar = () => {
+    let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(), // getting first day of month
+      lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(), // getting last date of month
+      lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(), // getting last day of month
+      lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate(); // getting last date of previous month
+    let liTag = "";
+
+    for (let i = firstDayofMonth; i > 0; i--) {
+      // creating li of previous month last days
+      liTag += `<li class="inactive">${lastDateofLastMonth - i + 1}</li>`;
+    }
+
+    for (let i = 1; i <= lastDateofMonth; i++) {
+      // creating li of all days of current month
+      // adding active class to li if the current day, month, and year matched
+      let isToday =
+        i === date.getDate() &&
+        currMonth === new Date().getMonth() &&
+        currYear === new Date().getFullYear()
+          ? "active"
+          : "";
+      liTag += `<li class="${isToday}">${i}</li>`;
+    }
+
+    for (let i = lastDayofMonth; i < 6; i++) {
+      // creating li of next month first days
+      liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`;
+    }
+    currentDate.innerText = `${months[currMonth]} ${currYear}`; // passing current mon and yr as currentDate text
+    daysTag.innerHTML = liTag;
+  };
+
+  prevNextIcon.forEach((icon) => {
+    // getting prev and next icons
+    icon.addEventListener("click", () => {
+      // adding click event on both icons
+      // if clicked icon is previous icon then decrement current month by 1 else increment it by 1
+      currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
+
+      if (currMonth < 0 || currMonth > 11) {
+        // if current month is less than 0 or greater than 11
+        // creating a new date of current year & month and pass it as date value
+        date = new Date(currYear, currMonth, new Date().getDate());
+        currYear = date.getFullYear(); // updating current year with new date year
+        currMonth = date.getMonth(); // updating current month with new date month
+      } else {
+        date = new Date(); // pass the current date as date value
+      }
+      renderCalendar(); // calling renderCalendar function
+    });
   });
 });
 
@@ -533,66 +510,6 @@ const Students = [
     Pass: "Pass",
   },
 ];
-
-//calendar
-const calendar = [
-  {
-    numCol1: 1,
-    numCol2: 8,
-    numCol3: 15,
-    numCol4: 22,
-    numCol5: 29,
-  },
-  {
-    numCol1: 2,
-    numCol2: 9,
-    numCol3: 16,
-    numCol4: 23,
-    numCol5: 30,
-  },
-  {
-    numCol1: 3,
-    numCol2: 10,
-    numCol3: 17,
-    numCol4: 24,
-    numCol5: 1,
-    color: ["text-gray-300"],
-  },
-  {
-    numCol1: 4,
-    numCol2: 11,
-    numCol3: 18,
-    numCol4: 25,
-    numCol5: 2,
-    color: ["text-gray-300"],
-  },
-  {
-    numCol1: 5,
-    numCol2: 12,
-    numCol3: 19,
-    numCol4: 26,
-    numCol5: 3,
-    color: ["text-gray-300"],
-  },
-  {
-    numCol1: 6,
-    numCol2: 13,
-    numCol3: 20,
-    numCol4: 27,
-    numCol5: 4,
-    color: ["text-gray-300"],
-  },
-  {
-    numCol1: 7,
-    numCol2: 14,
-    numCol3: 21,
-    numCol4: 28,
-    numCol5: 5,
-    color: ["text-gray-300"],
-  },
-];
-
-//hooper
 </script>
 
 <style scoped>
@@ -644,9 +561,94 @@ button:active {
   transform: scale(0.9);
 }
 
-.day-of-week,
-.date-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
+/* calendar Dynamic */
+
+.wrapper {
+  width: 600px;
+  height: 500px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+.wrapper header {
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+}
+header .icons {
+  display: flex;
+}
+header .icons span {
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #878787;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+}
+.icons span:last-child {
+  margin-right: -10px;
+}
+header .icons span:hover {
+  background: #f2f2f2;
+}
+header .current-date {
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+.calendar {
+  padding: 20px;
+}
+.calendar ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+.calendar .day {
+  margin-bottom: 20px;
+}
+.calendar li {
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+.calendar .weeks li {
+  font-weight: 500;
+  cursor: default;
+}
+.calendar .day li {
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+.day li.inactive {
+  color: #aaa;
+}
+.day li.active {
+  color: #fff;
+}
+.day li::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.day li.active::before {
+  background: #9b59b6;
+}
+.day li:not(.active):hover::before {
+  background: #f2f2f2;
 }
 </style>
